@@ -25,7 +25,7 @@ from time import time
 from collections import OrderedDict    
 
 # filepath = sys.argv[1]
-filepath = r'bzzm.jd.dict.yaml'
+filepath = r'c:/Users/line/AppData/Roaming/rime/bzzm.jd.dict.yaml'
 f = codecs.open(filepath, "r", 'utf-8')
 # 用codecs以指定编码打开文件很有效，不然有时会有错误
 lines = f.readlines()           #readlines()能生成一个list
