@@ -7,3 +7,6 @@
 拆机	dpfq	0
 没有	vg	0
 浏览器	vkmj	0
+跳转	jvhb	0
+中转	jvhb	1
+圆满成功	jvhb	2
