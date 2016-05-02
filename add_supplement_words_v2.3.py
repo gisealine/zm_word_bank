@@ -1,6 +1,7 @@
 # -*- encoding: UTF-8 -*-
 # 此脚本的作用是将supplement_bank.txt中的词按指定顺序添加到词库(word bank)中
-# usage：add_supplement.py filename/filepath (需和supplement_bank.txt在同一目录下）
+# usage：add_supplement.py (脚本需和supplement_bank.txt在同一目录下）
+# mac下usage为: python add_supplement.py
 # 它将在当前文件夹生成一个新文件，命名为 new_filename
 # 在变量中 supplement_bank 简称 sb, word bank 简称 wb
 
@@ -21,11 +22,12 @@ import re
 import os
 import sys
 import codecs
-from time import time 
-from collections import OrderedDict    
-
+from time import time
+from collections import OrderedDict
 # filepath = sys.argv[1]
-filepath = r'c:/Users/line/AppData/Roaming/rime/bzzm.jd.dict.yaml'
+# win下: filepath = r'c:/Users/line/AppData/Roaming/rime/bzzm.jd.dict.yaml'
+# Mac下:
+filepath = r'/Users/line/Library/Rime/bzzm.jd.dict.yaml'
 f = codecs.open(filepath, "r", 'utf-8')
 # 用codecs以指定编码打开文件很有效，不然有时会有错误
 lines = f.readlines()           #readlines()能生成一个list
@@ -101,7 +103,7 @@ for key in sbdict:
     # 此时sglwords形式为 [['苏', 1, 0], ['你',0, 1] ……]
     sbdict[key] = sorted(sglwords, key = lambda v: (v[1], v[2]))   # 多重排序，很cool
 
-    
+
 for key in sbdict:
     sglwords = sbdict[key]
     sbdict[key] = [subl[0] for subl in sglwords]

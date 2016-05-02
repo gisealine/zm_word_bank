@@ -10,3 +10,4 @@
 跳转	jvhb	0
 中转	jvhb	1
 圆满成功	jvhb	2
+靠谱	mjsu	0
